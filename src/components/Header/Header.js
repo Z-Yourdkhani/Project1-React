@@ -1,27 +1,38 @@
 import React from 'react'
+import { LinkContainer } from 'react-router-bootstrap'
 import { Container, Navbar, Nav } from 'react-bootstrap'
-import { BiLogInCircle, BiShoppingBag , BiBasket , BiHomeHeart} from 'react-icons/bi'
+import { BiLogInCircle, BiShoppingBag, BiBasket, BiHomeHeart } from 'react-icons/bi'
 const Header = () => {
     return (
         <header>
             <Navbar bg='dark' variant='dark' expand='lg'>
                 <Container>
-                    <Navbar.Brand href="/">project1-react</Navbar.Brand>
+                    <LinkContainer to='/'>
+                        <Navbar.Brand>project1-react</Navbar.Brand>
+                    </LinkContainer>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav>
-                        <Nav.Link href="/">
-                                <BiHomeHeart className='mx-1'/>Home
+                            <LinkContainer to='/'>
+                            <Nav.Link>
+                                <BiHomeHeart className='mx-1' />Home
                             </Nav.Link>
-                            <Nav.Link href="/shopping">
-                                <BiShoppingBag className='mx-1'/>Shopping
+                            </LinkContainer>
+                            <LinkContainer to='/shopping'>
+                            <Nav.Link>
+                                <BiShoppingBag className='mx-1' />Shopping
                             </Nav.Link>
-                            <Nav.Link href="/basket">
-                                <BiBasket className='mx-1'/>Basket
+                            </LinkContainer>
+                            <LinkContainer to='/basket'>
+                            <Nav.Link>
+                                <BiBasket className='mx-1' />Basket
                             </Nav.Link>
-                            <Nav.Link href="/login">
-                                <BiLogInCircle className='mx-1'/>Login
+                            </LinkContainer>
+                            <LinkContainer to='/login'>
+                            <Nav.Link>
+                                <BiLogInCircle className='mx-1' />Login
                             </Nav.Link>
+                            </LinkContainer>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
